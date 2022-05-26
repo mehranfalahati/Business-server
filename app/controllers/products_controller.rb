@@ -1,9 +1,10 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show edit update destroy ]
+  skip_before_action :is_authorized
 
   # GET /products or /products.json
   def index
-    @products = Product.all
+    @products = Product.order('id DESC')
   end
 
   # GET /products/1 or /products/1.json

@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2022_05_24_103749) do
     t.integer "price"
     t.text "image"
     t.integer "product_id"
+    t.text "URL"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

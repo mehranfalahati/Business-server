@@ -23,6 +23,13 @@ class ProductsController < ApplicationController
   # POST /products or /products.json
   def create
     @product = Product.new(product_params)
+    puts params[:file]
+    if params[:file].present?
+      req = Cloudinary::Uploader.upload(params[:file])
+      @product.URL = req["url"]
+      @product.image = req["public_id"]
+      @product.save
+    end
 
     respond_to do |format|
       if @product.save
@@ -37,6 +44,14 @@ class ProductsController < ApplicationController
 
   # PATCH/PUT /products/1 or /products/1.json
   def update
+    product = Product.find params[:id]
+    if params[:file].present?
+      req = Cloudinary::Uploader.upload(params[:file])
+      product.URL = req["url"]
+      product.image = req["public_id"]
+      product.save
+    end
+
     respond_to do |format|
       if @product.update(product_params)
         format.html { redirect_to product_url(@product), notice: "Product was successfully updated." }

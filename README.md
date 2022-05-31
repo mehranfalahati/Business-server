@@ -1,24 +1,25 @@
-# README
+# GIFT SHOP BACK-END(server)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Description
 
-Things you may want to cover:
+Live Demo: [business-server](https://giftshopserver.herokuapp.com/)
 
-* Ruby version
+This website (back-end) has been build for the owner who can post an item to sell! Basically this is the main webiste that can be changed and on the front-end (business-client), customers can see the details and buy it.
 
-* System dependencies
+### How to get start
 
-* Configuration
+In the Directory run the following commands:
+```
+To install dependencies:
+Bundle
 
-* Database creation
+To run the server:
+rails server
+```
 
-* Database initialization
+### This Project is Ruby on Rails as back-end and React as front-end
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Future
+- Add another table for stripe that a customer can pay for items by card
+- Search Bar
+- Add checkout table if customer wants to buy several items together
